@@ -4,13 +4,10 @@
 %% globals
 --]]
 
---Überwacht die Leistungsaufnahme der Waschmaschine und verschickt bei Ende
---eine Pushnachricht. Die Überwachung wird erst ab einer bestimmten Leistung
---vorgenommen, damit nicht ohne Lauf Nachrichten verschickt werden. Zusätzlich
---wird das Symbol des VD geändert.
+--Überwacht den Secomat und stellt sicher, dass dieser max. $Duration läuft
 
 local Device = 2461 -- Wallplug Secomat
-local phoneID = {2462} -- phone IDs for push notification
+local phoneID = {2462,2485} -- phone IDs for push notification
 local Duration = 7200 -- Nach [s] Sekunden ausschalten
 local Counter = 0 -- Zählt die Anzahl Sekunden, die das Gerät lief
 local PowerOff = 0 -- Definiert, ab welcher Schwelle das Gerät als ausgeschaltet gilt
