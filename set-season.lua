@@ -5,6 +5,12 @@
 --]]
     local zeitschaltung = 0030
 
+if fibaro:countScenes()>1 then
+  	--fibaro:debug("Kill second Scene...")
+    --fibaro:debug("-")
+ 	fibaro:abort()
+end
+
 Debug = function ( color, message )
   fibaro:debug(string.format('<%s style="color:%s;">%s', "span", color, message, "span"))
 end
